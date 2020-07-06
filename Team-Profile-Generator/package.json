@@ -1,0 +1,22 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhans19/team-profile-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/mhans19/team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
