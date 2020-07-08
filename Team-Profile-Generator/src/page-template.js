@@ -3,7 +3,9 @@ const Engineer = require("../lib/Engineer.js");
 const Intern = require("../lib/Intern.js");
 const fs = require('fs');
 
-const generatePage = () => {
+const generatePage = (managerData) => {
+    const{ teamName } = managerData;
+
     fs.writeFile('./dist/my-team.html', 
 `<!DOCTYPE html>
 <html lang="en">
@@ -17,12 +19,12 @@ const generatePage = () => {
     <body>
         <!-- Begin Header -->
         <header>
-            <h1 class = "text-center text-white bg-dark">My Team</h1>
+            <h1 class = "text-center text-white bg-secondary font-weight-bolder text-uppercase">${managerData.teamName}</h1>
         </header>
         <!-- End Header -->
         <!-- Begin Team Cards -->
         <div class = "container-fluid">
-            <div class = "row" id = "employee-cards">`,
+            <div class = "row justify-content-md-center">`,
     err => {
         if (err) {console.log(err);}
     })
@@ -36,20 +38,22 @@ const managerCard = managerData => {
     fs.appendFile(
         "./dist/my-team.html",
                 `
-                <div class = "col-12 col-md-9">
-                    <div class="card" style="width: 18rem;">
+                <div class = "col">
+                    <div class="card my-2">
                         <div class="card-body">
-                            <h3 class="card-title text-center">${manager.getName()}</h3>
-                            <h4 class="card-subtitle mb-2 text-center">
+                            <h3 class="card-title text-center font-weight-bolder text-uppercase text-info">${manager.getName()}</h3>
+                            <h4 class="card-subtitle mb-2 text-center font-weight-bold text-info">
                                 ${manager.getRole()}
                                 ${manager.getIcon()}
                             </h4>
-                            <h6 class = "card-body border">${manager.getId()}</h6>
-                            <h6 class = "card-body border">${manager.getEmail()}</h6>
-                            <h6 class = "card-body border">${manager.getOfficeNumber()}</h6>
+                            <h6 class = "card-body border border-secondary text-center font-weight-bold rounded bg-info text-white">${manager.getId()}</h6>
+                            <h6 class = "card-body border border-secondary text-center font-weight-bold rounded bg-info text-white">${manager.getEmail()}</h6>
+                            <h6 class = "card-body border border-secondary text-center font-weight-bold rounded bg-info text-white">${manager.getOfficeNumber()}</h6>
                         </div>
                     </div>
-                </div>`,
+                </div>
+            </div>
+            <div class = "row justify-content-md-center">`,        
         err => {
             if (err) {console.log(err);}
         }
@@ -69,17 +73,17 @@ const employeeCard = employeeData => {
     fs.appendFile(
         "./dist/my-team.html",
                 `
-                <div class = "col-12 col-md-9">
-                    <div class="card" style="width: 18rem;">
+                <div class = "col-md-6 col-lg-4">
+                    <div class="card my-2">
                         <div class="card-body">
-                            <h3 class="card-title text-center">${employee.getName()}</h3>
-                            <h4 class="card-subtitle mb-2 text-center">
+                            <h3 class="card-title text-info text-center font-weight-bolder text-uppercase">${employee.getName()}</h3>
+                            <h4 class="card-subtitle text-info mb-2 text-center font-weight-bold">
                                 ${employee.getRole()}
                                 ${employee.getIcon()}
                             </h4>
-                            <h6 class = "card-body border">${employee.getId()}</h6>
-                            <h6 class = "card-body border">${employee.getEmail()}</h6>
-                            <h6 class = "card-body border">${employee.getExtraFeature()}</h6>
+                            <h6 class = "card-body border border-secondary text-center font-weight-bold rounded bg-info text-white">${employee.getId()}</h6>
+                            <h6 class = "card-body border border-secondary text-center font-weight-bold rounded bg-info text-white">${employee.getEmail()}</h6>
+                            <h6 class = "card-body border border-secondary text-center font-weight-bold rounded bg-info text-white">${employee.getExtraFeature()}</h6>
                         </div>
                     </div>
                 </div>`,

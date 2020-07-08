@@ -4,6 +4,19 @@ const inquirer = require('inquirer');
 // Questions for Manager
 const managerInput = () => {
     return inquirer.prompt([
+        { // Prompt for team name
+            type: 'input',
+            name: 'teamName',
+            message: 'What is your team name?',
+            validate: teamName => {
+                if (teamName) {
+                    return true; 
+                } else {
+                    console.log('Please enter your team name!');
+                    return false;
+                }
+            }
+        },
         {// Prompt for manager name
             type: 'input',
             name: 'mngName',
@@ -169,7 +182,7 @@ Let's build your team!
 // Prompt Manager
 managerInput()
 .then(managerData => {
-    generatePage();
+    generatePage(managerData);
     managerCard(managerData);
 })
 .then(employeeInput)

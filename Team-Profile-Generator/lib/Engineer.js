@@ -6,13 +6,13 @@ class Engineer extends Employee {
         this.github = github;
     }
     getGithub(){
-        return this.github;
+        return "<a class = 'text-white' href='https://github.com/" + this.github + "?tab=repositories'>GitHub: " + this.github + "</a>"
     }
     getRole(){
         return 'Engineer'
     }
     getExtraFeature(){
-        return 'GitHub: ' + this.getGithub()
+        return this.getGithub()
     }
     getIcon(){
         return '<img src="https://img.icons8.com/ios-glyphs/30/000000/engineer.png"/>'
