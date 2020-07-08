@@ -1,11 +1,7 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "",
   "main": "Index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "test": "jest"
   },
@@ -18,5 +14,12 @@
   "homepage": "https://github.com/mhans19/team-profile-generator#readme",
   "devDependencies": {
     "jest": "^26.1.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/mhans19/team-profile-generator/issues"
+  },
+  "dependencies": {
+    "inquirer": "^7.3.0"
+  },
+  "description": ""
 }

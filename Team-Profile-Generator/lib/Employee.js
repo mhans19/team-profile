@@ -9,14 +9,11 @@ class Employee {
         return this.name;
     }
     getId(){
-        return this.id;
+        return 'ID: ' + this.id;
     }
     getEmail(){
-        return this.email;
+        return 'Email: ' + this.email;
     }
-    getRole(){
-        return this.role;
-    }
-};
+}
 
 module.exports = Employee;

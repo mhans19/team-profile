@@ -8,6 +8,15 @@ class Engineer extends Employee {
     getGithub(){
         return this.github;
     }
+    getRole(){
+        return 'Engineer'
+    }
+    getExtraFeature(){
+        return 'GitHub: ' + this.getGithub()
+    }
+    getIcon(){
+        return '<img src="https://img.icons8.com/ios-glyphs/30/000000/engineer.png"/>'
+    }
 };
 
 module.exports = Engineer;
