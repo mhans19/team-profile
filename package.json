@@ -19,6 +19,7 @@
     "url": "https://github.com/mhans19/team-profile-generator/issues"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
     "inquirer": "^7.3.0"
   },
   "description": ""

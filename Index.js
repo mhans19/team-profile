@@ -1,7 +1,7 @@
+// Load Modules and Packages
 const {generatePage, managerCard, employeeCard, generateFinal} = require("./src/page-template.js");
 const inquirer = require('inquirer');
-
-// Questions for Manager
+// Prompt Questions for Manager
 const managerInput = () => {
     return inquirer.prompt([
         { // Prompt for team name
@@ -70,29 +70,21 @@ const managerInput = () => {
             }
         },
         { // Prompt to build team
-            type: 'confirm',
+            type: 'list',
             name: 'newEmployee',
-            message: "Let's build your team!"
+            message: "Would you like to build your team?",
+            choices: ["Yes, let's add a member!", "No thanks, I'm done!"]
         }
     ]);    
 }       
-
-// Question prompts for user input   
+// Question prompts for employee input   
 const employeeInput = () => {
     return inquirer.prompt([
         { // Prompt for more team members
             type: 'list',
             name: 'employeeRole',
-            message: 'Who would you like to add to your team?',
+            message: 'Would you like to build your team?',
             choices: ["Engineer", "Intern"],
-            validate: employeePrompt => {
-                if (employeePrompt) {
-                    return true; 
-                } else {
-                    console.log('Please make a selection!');
-                    return false;
-                }
-            }
         },
         {// Prompt for name
             type: 'input',
@@ -165,41 +157,57 @@ const employeeInput = () => {
                 }
             }
         },
-        { // Prompt for more employees
-            type: 'confirm',
+        { // Prompt to build team
+            type: 'list',
             name: 'addEmployee',
-            message: 'Would you like to add another team member?',
-            default: false
+            message: "Would you like to add another team member?",
+            choices: ["Yes, let's add a member!", "No thanks, I'm done!"]
         }
     ])
-}
+};
+// Run application
 console.log(`
 ======================
 Let's build your team!
 ======================
 `);
-// Prompt Manager
-managerInput()
+managerInput() // Prompt Manager
 .then(managerData => {
-    generatePage(managerData);
-    managerCard(managerData);
-})
-.then(employeeInput)
-.then(employeeData => {
-    employeeCard(employeeData);
-    loop(employeeData);
+    generatePage(managerData); // Start HTML
+    managerCard(managerData); // Add Manager Card
+    if (managerData.newEmployee === "Yes, let's add a member!"){
+        employeeInput() // Prompt Employee
+        .then(employeeData => {
+            employeeCard(employeeData); // Add Employee Card
+            loop(employeeData); // Loop through prompts until user done building team
+        });
+    } else if (managerData.newEmployee === "No thanks, I'm done!") {
+        generateFinal(); // Finish HTML
+        console.log(`
+==================================================================
+You've finished building your team!
+An HTML file was created! Navigate to the 'dist' folder to locate.
+==================================================================
+        `);
+        return;
+    };
 });
-
+// Function for loop - Allowing for as many employees as wanted on a team.
 const loop = (data) => {
-    if (data.addEmployee) {
-        employeeInput()
+    if (data.addEmployee === "Yes, let's add a member!") {
+        employeeInput() // Prompt employee
         .then(data => {
-            employeeCard(data);
-            loop(data);
+            employeeCard(data); // Add Employee Card
+            loop(data); // Send back to top of loop until user is done building team.
         });
     } else {
-        generateFinal();
-        console.log("Your team HTML file was created! Navigate to the 'dist' folder to locate.")
+        generateFinal(); // Finish HTML
+        console.log(`
+==================================================================
+You've finished building your team!
+An HTML file was created! Navigate to the 'dist' folder to locate.
+==================================================================
+        `);
         return;
     }
-}
+};
