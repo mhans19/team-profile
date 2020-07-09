@@ -173,7 +173,6 @@ const employeeInput = () => {
         }
     ])
 }
-
 console.log(`
 ======================
 Let's build your team!
