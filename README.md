@@ -34,7 +34,7 @@
 > Live Application (Not relevant for this project)  
 > [GitHub Repository](https://github.com/mhans19/team-profile)  
 > [Video Demonstration](https://youtu.be/nQ213r0OWlA)  
-> [Sample README Output](./dist/my-team.html)  
+> [Sample HTML Output](./dist/my-team.html)  
 
 ---
 
