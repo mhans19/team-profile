@@ -9,8 +9,8 @@ test('creates an engineer object', () => {
     expect(engineer.role).toBe("Engineer");
     expect(engineer.github).toBe("test123");
     expect(engineer.getName()).toBe('Bob');
-    expect(engineer.getId()).toBe('111');
-    expect(engineer.getEmail()).toBe('test@gmail.com');
-    expect(engineer.getGithub()).toBe('test123');
+    expect(engineer.getId()).toBe('Identification Number: 111');
+    expect(engineer.getEmail()).toBe("<a class = 'text-white' href='mailto:>test@gmail.com'>Email Bob</a>");
+    expect(engineer.getGithub()).toBe("<a class = 'text-white' target='_blank' href='https://github.com/test123?tab=repositories'>GitHub: test123</a>");
     expect(engineer.getRole()).toBe('Engineer');
 });

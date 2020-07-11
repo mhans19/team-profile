@@ -9,7 +9,7 @@ test('creates a manager object', () => {
     expect(manager.role).toBe("Manager");
     expect(manager.officeNumber).toBe("999");
     expect(manager.getName()).toBe('Bob');
-    expect(manager.getId()).toBe('111');
-    expect(manager.getEmail()).toBe('test@gmail.com');
+    expect(manager.getId()).toBe('Identification Number: 111');
+    expect(manager.getEmail()).toBe("<a class = 'text-white' href='mailto:>test@gmail.com'>Email Bob</a>");
     expect(manager.getRole()).toBe('Manager');
 });

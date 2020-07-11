@@ -33,7 +33,7 @@
 ## **APPLICATION LINKS**
 > Live Application (Not relevant for this project)  
 > [GitHub Repository](https://github.com/mhans19/team-profile)  
-> [Video Demonstration]()  
+> [Video Demonstration](https://youtu.be/nQ213r0OWlA)  
 > [Sample README Output](./dist/my-team.html)  
 
 ---
@@ -70,7 +70,7 @@ This application was developed with the following application structures:
 
 ## **USAGE**
 > The application must be operated with a Command Line Interface (CLI) software. Using the command line, navigate to the local repository containing the *Index.js* file. Then, call upon node followed by the file name - *node Index.js*.   
-[Walkthrough Demonstration]()  
+[Walkthrough Demonstration](https://youtu.be/nQ213r0OWlA)  
 
 ---
 
@@ -135,12 +135,13 @@ This application was developed with the following application structures:
 ---
 
 ## **FUNCTIONALITY**
-1. From the command line interface (CLI), navigate to the local repository containing the *index.js* file.  
-![](/assets/images/local_repo.PNG)  
-2. Once in the local repository, type *node index.js* into the command line. Then press 'Enter'.  
-![](/assets/images/initiate_node.PNG)  
-3. From the command line, give a response to each of the questions prompted. Press 'Enter' to move to the next question. Once all the questions are answered, a validating message appears and instructs users that the newly generated README file is located within the 'dist' folder in the repository.  
-![](/assets/images/node_prompts.PNG)  
-4. Navigate to the created README and see that all responses given from the command line have populated into the README template.  
-![](/assets/images/readme_populated.PNG)  
-5. Your README file is ready to go!  
+1. From the command line interface (CLI), navigate to the local repository containing the *Index.js* file.  
+![](/assets/images/localRepo.PNG)  
+2. Once in the local repository, type *node Index.js* into the command line. Then press 'Enter'.  
+![](/assets/images/initiateNode.PNG)  
+3. From the command line, give a response to each of the questions prompted. Press 'Enter' to move to the next question. Once all the questions are answered, a validating message appears and instructs users that the newly generated HTML file is located within the 'dist' folder in the repository.  
+![](/assets/images/nodePrompts.PNG)  
+4. Navigate to the created HTML and see that all responses given from the command line have populated into the HTML template.  
+![](/assets/images/htmlPop.PNG)  
+5. Open the HTML file in a web-browser!  
+![](/assets/images/teamPage.PNG)
